@@ -19,7 +19,7 @@ const ImageSearch = ({setimagesList})=>{
         axios.get("https://api.unsplash.com/photos",{
             headers: {
                 "Accept-Version" : "v1",
-                Authorization:  "Client-ID AMm7J6vA7JyVYIjsLk53PzAk63r-eyQLyzcA_Ow9jE4"
+                Authorization:  `Client-ID ${process.env.REACT_APP_UNSPLASH_ACCESS_KEY}`
             }
         })
         .then((response) => setimagesList(response.data))
@@ -34,7 +34,7 @@ const ImageSearch = ({setimagesList})=>{
         axios.get("https://api.unsplash.com/search/photos",{
             headers: {
                 "Accept-Version" : "v1",
-                Authorization:  "Client-ID AMm7J6vA7JyVYIjsLk53PzAk63r-eyQLyzcA_Ow9jE4"
+                Authorization:  `Client-ID ${process.env.REACT_APP_UNSPLASH_ACCESS_KEY}`
             },
             params:{
                 query: imageName
